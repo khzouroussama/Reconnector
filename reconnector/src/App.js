@@ -6,6 +6,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom"
 import Home from "./components/pages/Home.js"
 import Landing from "./components/pages/Landing.js"
 
+import 'materialize-css/dist/css/materialize.min.css';
+
 
 function App() {
   return (
