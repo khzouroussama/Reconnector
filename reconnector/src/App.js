@@ -16,8 +16,8 @@ function App() {
           <Switch>
             <Route path="/" exact component={Landing} currentPage = {true}/>
             <Route path="/home" component={Home} currentPage = {false}/>
-            <Route to="/login" component={SignIn} />
-            <Route to="/logout" component={SignUp} />
+            <Route path="/login" component={SignIn} />
+            <Route path="/logout" component={SignUp} />
             <Route component={Error} exact/>
           </Switch>
         </BrowserRouter>
