@@ -1,10 +1,17 @@
-import React from "react"
+import React, { Component } from "react"
+
+class Landing extends Component{
+    render(){
+        return(
+            <section>
+                <div className="Landing">
+                    <h1> Reconnector </h1>
+                    <h3> Easily build your network and keep in touch! </h3>
+                </div>
+            </section>
+        )
+    }
+}
 
 
-<header className="App-header">
-
-    <h1> Connector </h1>
-    <h4> Build your network and keep in touch!</h4>
-    
-    {/* BUTTON TO REGISTER */}
-</header>
+export default Landing 
