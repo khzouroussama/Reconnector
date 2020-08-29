@@ -18,7 +18,7 @@ function App() {
             <Route path="/home" component={Home} currentPage = {false}/>
             <Route path="/login" component={SignIn} />
             <Route path="/register" component={SignUp} />
-            <Route component={Error} exact/>
+            <Route render={() => <h3 className="white-text"> Oops, this page does not exist</h3>} />
           </Switch>
         </BrowserRouter>
     </div>
