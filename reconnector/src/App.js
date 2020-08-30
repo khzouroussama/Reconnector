@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
-import SignIn from "./components/accounts/SignIn"
-import SignUp from "./components/accounts/SignUp"
+import {SignIn} from "./components/accounts/SignIn"
+import {SignUp} from "./components/accounts/SignUp"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import Home from "./components/pages/Home.js"
 import Landing from "./components/pages/Landing.js"
-
+import firebase from './firebase'
 import 'materialize-css/dist/css/materialize.min.css';
+
 
 
 function App() {
