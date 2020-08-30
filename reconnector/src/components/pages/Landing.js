@@ -33,11 +33,11 @@ class Landing extends Component{
                                     <div className="row">
                                         <div className="input-field col s6">
                                             <i className="material-icons red-text text-lighten-2 prefix">account_circle</i>
-                                            <input placeholder="Emma" id="first_name" type="text" className="validate"/>
+                                            <input id="disabled" type="text" className="validate"/>
                                             <label htmlFor="teal-text first_name">First Name</label>
                                         </div>
                                         <div className="input-field col s6">
-                                            <input placeholder="Brown" id="last_name" type="text" className="validate"/>
+                                            <input id="last_name" type="text" className="validate"/>
                                                 <label htmlFor="last_name">Last Name</label>
                                         </div>
                                     </div>
@@ -45,12 +45,12 @@ class Landing extends Component{
                                     <div className="row">
                                         <div className="input-field col s6">
                                             <i className="material-icons red-text text-lighten-2 prefix">domain</i>
-                                            <input placeholder="Google" id="company" type="text" className="validate"/>
+                                            <input id="company" type="text" className="validate"/>
                                             <label htmlFor="company">Company</label>
                                         </div>
                                         <div className="input-field col s6">
                                             <i className="material-icons red-text text-lighten-2 prefix">work</i>
-                                            <input placeholder="Product Manager" id="job" type="text" className="validate"/>
+                                            <input id="job" type="text" className="validate"/>
                                             <label htmlFor="job">Job title</label>
                                         </div>
                                     </div>
@@ -82,13 +82,12 @@ class Landing extends Component{
                                 <form className="col s12">
                                     <div className="row">
 
-                                        <h6>Frequency</h6>
                                         <div className="col s12">every</div>
 
                                         <div className="input-field col s12">
                                             <i className="material-icons red-text text-lighten-2 prefix">perm_contact_calendar</i>
                                             <input placeholder="month" id="times" type="text" className="validate"/>
-                                            <label htmlFor="times">times</label>
+                                            {/* <label htmlFor="times">times</label> */}
                                         </div>
 
                                         <div className="col s12">for</div>
@@ -96,7 +95,8 @@ class Landing extends Component{
                                         <div className="input-field col s12">
                                             <i className="material-icons red-text text-lighten-2 prefix">access_time</i>
                                             <input placeholder="2x" id="times" type="text" className="validate"/>
-                                            <label htmlFor="times">times</label>
+                                            {/* <label htmlFor="times">times</label> */}
+
                                         </div>
 
                                     </div>
