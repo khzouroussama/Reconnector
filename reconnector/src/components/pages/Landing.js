@@ -2,6 +2,9 @@ import React, { Component } from "react"
 import './Landing.css'
 
 
+// Import Materialize
+import M from "materialize-css"
+
 class Landing extends Component{
     render(){
         return(
@@ -13,7 +16,7 @@ class Landing extends Component{
                         <a href="/register" class="waves-effect waves-light red accent-2 btn-large"> Register </a>
                     </div>
                 </div>
-                
+
             </section>
         )
     }
