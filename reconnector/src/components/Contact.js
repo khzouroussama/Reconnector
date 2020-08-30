@@ -15,7 +15,7 @@ const Contact = (props) => {
                     <b className="teal-text text-darken-3">Mohamed Oussama</b>
                     <span className="new badge" data-badge-caption=""> 3 days ago</span>
                 </div>
-                <div className="collapsible-body">
+                <div className="collapsible-body cyan darken-1">
 
                     <div className="row">
                         <div className="col s6">

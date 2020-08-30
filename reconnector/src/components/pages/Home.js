@@ -55,14 +55,14 @@ const Home = () => {
 
              {/*add contact Modal Structure */}
 
-            <div id="add_modal" className="modal modal-fixed-footer grey-text cyan darken-2 text-darken-2">
-                <div className="modal-content">
+            <div id="add_modal" class="modal modal-fixed-footer white-text cyan darken-2 text-darken-2">
+                <div class="modal-content">
                     <h4 className="center-align white-text">Add Contact</h4>
                     {/*<p className="center-align">text</p>*/}
                     <div className="row">
                         <form className="col s12">
                             <div className="row">
-                                <div className="input-field col s6">
+                                <div className="input-field col s12 m6 ">
                                     <i className="material-icons red-text text-lighten-2 prefix">account_circle</i>
                                     <input id="first_name" type="text" className="validate" value={fname} onChange={e => setFname(e.target.value)}/>
                                     <label className="white-text" htmlFor="first_name">First Name</label>
@@ -74,12 +74,12 @@ const Home = () => {
                             </div>
 
                             <div className="row">
-                                <div className="input-field col s6">
+                                <div className="input-field col s12 m6 ">
                                     <i className="material-icons red-text text-lighten-2 prefix">domain</i>
                                     <input id="company" type="text" className="validate" value={company} onChange={e => setCompany(e.target.value)}/>
                                     <label className="white-text" htmlFor="company">Company</label>
                                 </div>
-                                <div className="input-field col s6">
+                                <div className="input-field col s12 m6 ">
                                     <i className="material-icons red-text text-lighten-2 prefix">work</i>
                                     <input id="job" type="text" className="validate" value={jobTitle} onChange={e => setJobTitle(e.target.value)}/>
                                     <label className="white-text" htmlFor="job">Job title</label>
@@ -95,12 +95,12 @@ const Home = () => {
                             </div>
 
                             <div className="row">
-                                <div className="input-field col s6">
+                                <div className="input-field col s12 m6 ">
                                     <i className="material-icons red-text text-lighten-2 prefix">web</i>
                                     <input id="linkedin" type="text" className="validate" value={linkedin} onChange={e => setLinkedin(e.target.value)}/>
                                     <label className="white-text" htmlFor="linkedin">linkedin</label>
                                 </div>
-                                <div className="input-field col s6">
+                                <div className="input-field col s12 m6 ">
                                     <i className="material-icons red-text text-lighten-2 prefix">phone</i>
                                     <input id="phone_number" type="text" className="validate white-text" value={number} onChange={e => setNumber(e.target.value)}/>
                                     <label className="white-text" htmlFor="phone_number">Phone number</label>

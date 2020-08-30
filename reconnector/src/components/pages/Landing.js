@@ -79,7 +79,28 @@ class Landing extends Component{
                                 <h5> Keep in touch with past connections </h5>
                             </div>
                             <div class="col s8">
-                                <h3> hi </h3>
+                                <form className="col s12">
+                                    <div className="row">
+
+                                        <h6>Frequency</h6>
+                                        <div className="col s12">every</div>
+
+                                        <div className="input-field col s12">
+                                            <i className="material-icons red-text text-lighten-2 prefix">perm_contact_calendar</i>
+                                            <input placeholder="month" id="times" type="text" className="validate"/>
+                                            <label htmlFor="times">times</label>
+                                        </div>
+
+                                        <div className="col s12">for</div>
+
+                                        <div className="input-field col s12">
+                                            <i className="material-icons red-text text-lighten-2 prefix">access_time</i>
+                                            <input placeholder="2x" id="times" type="text" className="validate"/>
+                                            <label htmlFor="times">times</label>
+                                        </div>
+
+                                    </div>
+                                </form>
 
                             </div>
                         </div>
