@@ -1,4 +1,9 @@
+body{
+  background-color: #0097a7;
+}
+
 .Landing {
+    text-align:center;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -11,4 +16,8 @@
 .row{
   padding-top: 3%;
   padding-bottom: 3%;
+}
+
+.rfooter{
+  text-align:center;
 }

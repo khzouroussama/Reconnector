@@ -12,7 +12,7 @@ export default class SignIn extends Component {
     render() {
         return (
             <div className="container white-text">
-                <h1> Register </h1>
+                <h1 className="center"> Register </h1>
                 
                 <form className="container col s8" onSubmit={this.handleSubmit}>
                   <div className="row">
@@ -35,8 +35,7 @@ export default class SignIn extends Component {
                     <input type="password" name="password" id="password" className="validate" onChange={this.handleChange} />
                     <label htmlFor="password" >Password</label>
                   </div>
-                  <button type="submit" className="waves-effect waves-light btn">Submit</button>
-                  <Link to="/login" type="submit" className="waves-effect waves-light btn">Login</Link >
+                  <Link to="/login" type="submit" className="right waves-effect waves-light red accent-2 btn"> Register </Link >
                 </form>
             </div>
         )
