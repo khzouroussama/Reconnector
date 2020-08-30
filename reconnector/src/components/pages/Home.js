@@ -96,7 +96,7 @@ const Home = () => {
                                     <select>
                                         <option value="" disabled selected>Choose your option</option>
                                         <option value="1">week</option>
-                                        <option value="2">monthes</option>
+                                        <option value="2">months</option>
                                     </select>
                                 </div>
                                 <div className="col s12">for</div>
