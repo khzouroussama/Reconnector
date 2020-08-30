@@ -132,18 +132,18 @@ const ContactList = (props) => {
     return (
         
         <ul className="collapsible popout">
-            <Contact 
-                f_name={f_name} 
-                l_name={l_name} 
-                company_name={company_name} 
-                contact_email={contact_email} 
-                contact_frequency_number={contact_frequency_number} 
-                contact_frequency_unit={contact_frequency_unit} 
-                contact_linkedin={contact_linkedin} 
-                contact_number={contact_number} 
-                job_title={job_title} 
-                notes={notes} 
-            />
+            {/*<Contact */}
+            {/*    f_name={f_name} */}
+            {/*    l_name={l_name} */}
+            {/*    company_name={company_name} */}
+            {/*    contact_email={contact_email} */}
+            {/*    contact_frequency_number={contact_frequency_number} */}
+            {/*    contact_frequency_unit={contact_frequency_unit} */}
+            {/*    contact_linkedin={contact_linkedin} */}
+            {/*    contact_number={contact_number} */}
+            {/*    job_title={job_title} */}
+            {/*    notes={notes} */}
+            {/*/>*/}
             <Contact
                 f_name = "John"
                 l_name ="Steven"
