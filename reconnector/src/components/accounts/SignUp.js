@@ -23,7 +23,7 @@ const SignUp = ({history}) => {
         [history],
     )
     return (
-        <div className="container">
+        <div className="container ">
             <h1 className="white-text">Register</h1>
             <form  onSubmit={handleSignUp}>
               <div className="input-field col s12 l6">

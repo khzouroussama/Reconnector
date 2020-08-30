@@ -17,18 +17,18 @@ class Landing extends Component{
                     <div className="cyan darken-2 white-text">
                         <h1> Reconnector </h1>
                         <h5> Build relationships. Keep in touch. Never forget.  </h5>
-                        <Link to="/register" class="waves-effect waves-light red accent-2 btn-large"> Register </Link>
+                        <Link to="/register" className="waves-effect waves-light red accent-2 btn-large"> Register </Link>
                     </div>
                 </div>
 
                 <div className="infoSection">
-                    <div class="white red-text accent-2 row">
-                        <div class="section container">
-                            <div class="col s4">
+                    <div className="white red-text accent-2 row">
+                        <div className="section container">
+                            <div className="col s4">
                                 <h3> Add new connections</h3>
                                 <h5> Build your network with a click of a button </h5>
                             </div>
-                            <div class="col s8">
+                            <div className="col s8">
                                 <form className="col s12">
                                     <div className="row">
                                         <div className="input-field col s6">
@@ -59,26 +59,26 @@ class Landing extends Component{
                         </div>
                     </div>
 
-                    <div class="white-text row">
-                        <div class="section container">
-                            <div class="col s4">
+                    <div className="white-text row">
+                        <div className="section container">
+                            <div className="col s4">
                                 <h3> View connections</h3>
                                 <h5> Simple UI to see your all your past connections </h5> 
 
                             </div>
-                            <div class="col s8">
+                            <div className="col s8">
                                 < ContactList />
                             </div>
                         </div>
                     </div>
 
-                    <div class="white red-text accent-2 row">
-                        <div class="container">
-                            <div class="col s4">
+                    <div className="white red-text accent-2 row">
+                        <div className="container">
+                            <div className="col s4">
                                 <h3> Set Reminders!</h3>
                                 <h5> Keep in touch with past connections </h5>
                             </div>
-                            <div class="col s8">
+                            <div className="col s8">
                                 <form className="col s12">
                                     <div className="row">
 
@@ -108,8 +108,8 @@ class Landing extends Component{
                 </div>
 
 
-                <div class="container row rfooter">
-                    <a href="/register" class="waves-effect waves-light red accent-2 btn-large"> Register </a> 
+                <div className="container row rfooter">
+                    <a href="/register" className="waves-effect waves-light red accent-2 btn-large"> Register </a>
                 </div>
 
 
