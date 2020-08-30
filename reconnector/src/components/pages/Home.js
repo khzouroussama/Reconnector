@@ -28,16 +28,16 @@ const Home = () => {
             </div>
 
             <div className="fixed-action-btn">
-                <a className="btn-floating btn-large waves-effect waves-circle waves-light modal-trigger" href="#add_modal" >
+                <a className="btn-floating btn-large waves-effect waves-circle waves-light modal-trigger red accent-2" href="#add_modal" >
                     <i className="large material-icons">add</i>
                 </a>
             </div>
 
              {/*add contact Modal Structure */}
 
-            <div id="add_modal" class="modal modal-fixed-footer grey-text text-darken-2">
+            <div id="add_modal" class="modal modal-fixed-footer grey-text cyan darken-2 text-darken-2">
                 <div class="modal-content">
-                    <h4 className="center-align">Add Contact</h4>
+                    <h4 className="center-align white-text">Add Contact</h4>
                     {/*<p className="center-align">text</p>*/}
                     <div className="row">
                         <form className="col s12">
@@ -118,9 +118,9 @@ const Home = () => {
                         </form>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Add</a>
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+                <div class="red accent-2 modal-footer">
+                    <a href="#!" class="white-text modal-close waves-effect waves-green btn-flat">Add</a>
+                    <a href="#!" class="white-text modal-close waves-effect waves-green btn-flat">Cancel</a>
                 </div>
             </div>
 
