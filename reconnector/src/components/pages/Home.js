@@ -35,31 +35,31 @@ const Home = () => {
 
              {/*add contact Modal Structure */}
 
-            <div id="add_modal" class="modal modal-fixed-footer grey-text cyan darken-2 text-darken-2">
+            <div id="add_modal" class="modal modal-fixed-footer white-text cyan darken-2 text-darken-2">
                 <div class="modal-content">
                     <h4 className="center-align white-text">Add Contact</h4>
                     {/*<p className="center-align">text</p>*/}
                     <div className="row">
                         <form className="col s12">
                             <div className="row">
-                                <div className="input-field col s6">
+                                <div className="input-field col s12 m6 ">
                                     <i className="material-icons red-text text-lighten-2 prefix">account_circle</i>
                                     <input id="first_name" type="text" className="validate"/>
                                     <label htmlFor="first_name">First Name</label>
                                 </div>
-                                <div className="input-field col s6">
+                                <div className="input-field col s12 m6 ">
                                     <input id="last_name" type="text" className="validate"/>
                                         <label htmlFor="last_name">Last Name</label>
                                 </div>
                             </div>
 
                             <div className="row">
-                                <div className="input-field col s6">
+                                <div className="input-field col s12 m6 ">
                                     <i className="material-icons red-text text-lighten-2 prefix">domain</i>
                                     <input id="company" type="text" className="validate"/>
                                     <label htmlFor="company">Company</label>
                                 </div>
-                                <div className="input-field col s6">
+                                <div className="input-field col s12 m6 ">
                                     <i className="material-icons red-text text-lighten-2 prefix">work</i>
                                     <input id="job" type="text" className="validate"/>
                                     <label htmlFor="job">Job title</label>
@@ -75,12 +75,12 @@ const Home = () => {
                             </div>
 
                             <div className="row">
-                                <div className="input-field col s6">
+                                <div className="input-field col s12 m6 ">
                                     <i className="material-icons red-text text-lighten-2 prefix">web</i>
                                     <input id="linkedin" type="text" className="validate"/>
                                     <label htmlFor="linkedin">linkedin</label>
                                 </div>
-                                <div className="input-field col s6">
+                                <div className="input-field col s12 m6 ">
                                     <i className="material-icons red-text text-lighten-2 prefix">phone</i>
                                     <input id="phone_number" type="text" className="validate"/>
                                     <label htmlFor="phone_number">Phone number</label>
