@@ -4,6 +4,9 @@ import Navbar from '../Navbar';
 
 
 
+// Import Materialize
+import M from "materialize-css"
+
 class Landing extends Component{
     render(){
         return(
@@ -17,6 +20,7 @@ class Landing extends Component{
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <div>
                     <div class="white red-text accent-2 row">
                         <div class="container">
@@ -77,6 +81,8 @@ class Landing extends Component{
 
                
                 
+=======
+>>>>>>> 27fb083119ce874e54754e574ab8564576109fef
             </section>
         )
     }
