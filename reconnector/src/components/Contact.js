@@ -11,9 +11,9 @@ const Contact = (props) => {
     return (
             <li style={{marginBottom : '5px'}}>
                 <div className="collapsible-header">
-                    <i className="material-icons">person_outline</i>
+                    <i className="material-icons">account_circle</i>
                     <b className="teal-text text-darken-3">Mohamed Oussama</b>
-                    <span className="new badge" data-badge-caption="last called">3 days ago</span>
+                    <span className="new badge" data-badge-caption="">last called : 3 days ago</span>
                 </div>
                 <div className="collapsible-body">
                     <div className="row">
