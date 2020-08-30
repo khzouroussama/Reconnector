@@ -1,13 +1,99 @@
 import React, { Component } from "react"
+import {Link} from "react-router-dom";
+import './Landing.css'
+import Navbar from '../Navbar';
+import ContactList from "../Contact";
+
+
+// Import Materialize
+// import M from "materialize-css"
 
 class Landing extends Component{
     render(){
         return(
             <section>
-                <div className="Landing">
-                    <h1> Reconnector </h1>
-                    <h3> Easily build your network and keep in touch! </h3>
+                <Navbar />
+                <div className="container Landing">
+                    <div className="cyan darken-2 white-text">
+                        <h1> Reconnector </h1>
+                        <h5> Build relationships. Keep in touch. Never forget.  </h5>
+                        <Link to="/register" class="waves-effect waves-light red accent-2 btn-large"> Register </Link>
+                    </div>
                 </div>
+
+                <div className="infoSection">
+                    <div class="white red-text accent-2 row">
+                        <div class="section container">
+                            <div class="col s4">
+                                <h3> Add new connections</h3>
+                                <h5> Build your network with a click of a button </h5>
+                            </div>
+                            <div class="col s8">
+                                <form className="col s12">
+                                    <div className="row">
+                                        <div className="input-field col s6">
+                                            <i className="material-icons red-text text-lighten-2 prefix">account_circle</i>
+                                            <input placeholder="Emma" id="first_name" type="text" className="validate"/>
+                                            <label htmlFor="teal-text first_name">First Name</label>
+                                        </div>
+                                        <div className="input-field col s6">
+                                            <input placeholder="Brown" id="last_name" type="text" className="validate"/>
+                                                <label htmlFor="last_name">Last Name</label>
+                                        </div>
+                                    </div>
+
+                                    <div className="row">
+                                        <div className="input-field col s6">
+                                            <i className="material-icons red-text text-lighten-2 prefix">domain</i>
+                                            <input placeholder="Google" id="company" type="text" className="validate"/>
+                                            <label htmlFor="company">Company</label>
+                                        </div>
+                                        <div className="input-field col s6">
+                                            <i className="material-icons red-text text-lighten-2 prefix">work</i>
+                                            <input placeholder="Product Manager" id="job" type="text" className="validate"/>
+                                            <label htmlFor="job">Job title</label>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="white-text row">
+                        <div class="section container">
+                            <div class="col s4">
+                                <h3> View connections</h3>
+                                <h5> Simple UI to see your all your past connections </h5> 
+
+                            </div>
+                            <div class="col s8">
+                                < ContactList />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="white red-text accent-2 row">
+                        <div class="container">
+                            <div class="col s4">
+                                <h3> Set Reminders!</h3>
+                                <h5> Keep in touch with past connections </h5>
+                            </div>
+                            <div class="col s8">
+                                <h3> hi </h3>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="container row rfooter">
+                    <a href="/register" class="waves-effect waves-light red accent-2 btn-large"> Register </a> 
+                </div>
+
+
+               
+                
             </section>
         )
     }

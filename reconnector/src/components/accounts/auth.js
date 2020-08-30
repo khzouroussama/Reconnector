@@ -1,26 +1,30 @@
-import React from 'react'
-import firebase from '../../firebase'
+import React, { useEffect, useState } from "react";
+import app from "../../firebase";
 
-export const signIn = () => {
-    var Provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(Provider).then(res => alert(`Thank you ${res.user.email} for joining with us!`)).catch(err => alert(err));
-}
+export const AuthContext = React.createContext();
 
-export const signOut = () => {
-    firebase.auth().signOut();
-}
-export const initFirebaseAuth = () => {
-    // firebase.auth().onAuthStateChanged(authStateObserver);
-}
+export const AuthProvider = ({ children }) => {
+  const [currentUser, setCurrentUser] = useState(null);
+  const [pending, setPending] = useState(true);
 
-export const getProfilePicUrl = () => {
-    return firebase.auth().currentUser.photoURL || '/images/profile_placeholder.png';
-}
+  useEffect(() => {
+    app.auth().onAuthStateChanged((user) => {
+      setCurrentUser(user)
+      setPending(false)
+    });
+  }, []);
 
-export const getUserName = () => {
-    return firebase.auth().currentUser.displayName;
-}
+  if(pending){
+    return <>Loading...</>
+  }
 
-export const isLoggedIn = () => {
-    return !!firebase.auth().currentUser;
-}
+  return (
+    <AuthContext.Provider
+      value={{
+        currentUser
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
+};

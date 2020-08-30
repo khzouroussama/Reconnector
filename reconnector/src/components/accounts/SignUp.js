@@ -1,51 +1,51 @@
-import React, { useState, useEffect } from 'react'
-import {Link} from 'react-router-dom'
+import React, {useCallback} from 'react'
+import app from '../../firebase';
+import { withRouter } from 'react-router-dom';
 
-export const SignUp = () => {
-    
-    const initialValues = {
-        fullname: '',
-        lastname: '',
-        email: '',
-        password: '',
-    }
-
-    var [values, setValues] = useState(initialValues)
-
-    const handleChange = (e) => {
-        var [name, value] = e.target
-        setValues({
-            ...values,
-            [name]: value
-        })
-    }
-    const handleSubmit = (e) => {
-        console.log(e);
-    }
-
+const SignUp = ({history}) => {
+    const handleSignUp = useCallback(
+        async event => {
+            event.preventDefault();
+            const {f_name, l_name, email, password} = event.target.elements;
+            try{
+                await app
+                .auth()
+                .createUserWithEmailAndPassword(email.value, password.value).then(
+                    (res) => {
+                        console.log(res.user)
+                    }
+                );
+                history.push("/home");
+            }catch(err){
+                alert(err)
+            }
+        },
+        [history],
+    )
     return (
         <div className="container">
-            <h1>This is the sign Up page</h1>
-            <form onSubmit={handleSubmit}>
-                <div className="input-field col s6 l6">
-                <input type="text" name="first_name" id="first_name" className="validate" value={values.firstname} onChange={handleChange} />
+            <h1 className="white-text">Register</h1>
+            <form  onSubmit={handleSignUp}>
+              <div className="input-field col s12 l6">
+                <input type="text" id="first_name" name="first_name" className="validate" />
                 <label htmlFor="first_name">First Name</label>
-                </div>
-                <div className="input-field col s6 l6">
-                <input type="text" name="last_name" id="last_name" className="validate" value={values.lastname} onChange={handleChange} />
+              </div>
+              <div className="input-field col s12 l6">
+                <input type="text" id="last_name" name="last_name" className="validate" />
                 <label htmlFor="last_name">Last Name</label>
-                </div>
-                <div className="input-field col s12">
-                <input type="email" name="email" id="email" className="validate" value={values.email} onChange={handleChange} />
+              </div>
+              <div className="input-field col s12">
+                <input type="email" id="email" name="email" className="validate" />
                 <label htmlFor="email" data-error="wrong" data-success="right">Email</label>
-                </div>
-                <div className="input-field col s12">
-                <input type="password" name="password" id="password" className="validate" value={values.password} onChange={handleChange} />
-                <label htmlFor="password" >Password</label>
-                </div>
-                <button type="submit" className="waves-effect waves-light btn">Submit</button>
-                <Link to="/login" type="submit" className="waves-effect waves-light btn">Login</Link >
+              </div>
+              <div className="input-field col s12">
+                <input type="password" id="password" name="password" className="validate" />
+                <label htmlFor="password">Password</label>
+              </div>
+              <button className="waves-effect waves-light btn" type="submit">Submit</button>
             </form>
         </div>
     )
 }
+
+export default withRouter(SignUp);

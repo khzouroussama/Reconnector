@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "dotenv": "^8.2.0",
     "firebase": "^7.19.1",
+    "jquery": "^3.5.1",
     "materialize-css": "^1.0.0-rc.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
