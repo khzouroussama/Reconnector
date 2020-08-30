@@ -7,6 +7,12 @@ import { Redirect } from 'react-router-dom';
 
 function NavBar (){
     
+    const performRedirect = () => {
+        return (
+            <Redirect to="/login" />
+        )
+    }
+
     const { currentUser } = useContext(AuthContext);
         return(
         <section> 
@@ -19,7 +25,7 @@ function NavBar (){
 
                         {/* show when logged in */}
 
-                        {!currentUser ?<li><a onClick={() => {app.auth().signOut()}}> Logout <i className="large left material-icons">exit_to_app</i></a></li> : <li><a onCLick={<Redirect to='/login' />}>Login <i className="large left material-icons">login</i> </a></li>}
+                        {currentUser ?<li><a onClick={() => {app.auth().signOut()}}> Logout <i className="large left material-icons">exit_to_app</i></a></li> : <li><a href="/login">Login <i className="large left material-icons">login</i> </a></li>}
 
                     </ul>
                     </div>

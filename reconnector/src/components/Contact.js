@@ -1,7 +1,7 @@
-import React, {useEffect} from "react"
-
-
+import React, {useEffect, useState} from "react"
 import M from "materialize-css"
+import app from "../firebase";
+import * as firebase from 'firebase';
 
 const Contact = (props) => {
     useEffect(()=> {
@@ -12,8 +12,8 @@ const Contact = (props) => {
             <li style={{marginBottom : '5px'}}>
                 <div className="collapsible-header">
                     <i className="material-icons">account_circle</i>
-                    <b className="teal-text text-darken-3">Mohamed Oussama</b>
-                    <span className="new badge" data-badge-caption=""> 3 days ago</span>
+                    <b className="teal-text text-darken-3">{ props.f_name } { props.l_name}</b>
+                    <span className="new badge" data-badge-caption=""> {props.days} days ago</span>
                 </div>
                 <div className="collapsible-body cyan darken-1">
 
@@ -24,7 +24,7 @@ const Contact = (props) => {
                                     <h6 className="grey-darken-3-text">Company</h6>
                                 </div>
                                 <div className="col s9">
-                                    <h5 className="white-text left-align">Microsoft</h5>
+                                    <h5 className="white-text left-align">{props.company_name}</h5>  
                                 </div>
                             </div>
 
@@ -33,7 +33,7 @@ const Contact = (props) => {
                                     <h6 className="grey-darken-text">Job title</h6>
                                 </div>
                                 <div className="col s9">
-                                    <h5 className="white-text left-align">Software Engineer</h5>
+                                    <h5 className="white-text left-align">{props.job_title}</h5>
                                 </div>
                             </div>
 
@@ -43,7 +43,7 @@ const Contact = (props) => {
 
                                 </div>
                                 <div className="col s9">
-                                    <h5 className="white-text left-align">oussama@gmail.com</h5>
+                                    <h5 className="white-text left-align">{props.contact_email}</h5>
                                 </div>
                             </div>
                            
@@ -55,7 +55,7 @@ const Contact = (props) => {
                                     <h6 className="grey-darken-text">Linkedin</h6>
                                 </div>
                                 <div className="col s9">
-                                    <h5 className="white-text left-align">/in/oussama</h5>
+                                    <h5 className="white-text left-align">{props.contact_linkedin}</h5>
                                 </div>
                             </div>
 
@@ -64,7 +64,7 @@ const Contact = (props) => {
                                     <h6 className="grey-darken-text">Number</h6>
                                 </div>
                                 <div className="col s9">
-                                    <h5 className="white-text left-align">0263189866</h5>
+                                    <h5 className="white-text left-align">{props.contact_number}</h5>
                                 </div>
                             </div>
 
@@ -73,7 +73,7 @@ const Contact = (props) => {
                                     <h6 className="grey-darken-text">Frequency</h6>
                                 </div>
                                 <div className="col s9">
-                                    <h5 className="white-text left-align">1x a month</h5>
+                                    <h5 className="white-text left-align">{props.contact_frequency_number}x a {props.contact_frequency_unit}</h5>
                                 </div>
                             </div>
                         </div>
@@ -93,7 +93,9 @@ const Contact = (props) => {
                             <div className="divider"></div>
 
                             <h6 className="white-text">Notes</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                            <p>
+                                {props.notes}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -102,15 +104,47 @@ const Contact = (props) => {
 }
 
 const ContactList = (props) => {
-    const Contacts = [
-
-    ]
+    
+    var [f_name, set_f_name] = useState('')
+    var [l_name, set_l_name] = useState('')
+    var [company_name, set_company_name] = useState('')
+    var [contact_email, set_contact_email] = useState('')
+    var [contact_frequency_number, set_contact_frequency_number] = useState('')
+    var [contact_frequency_unit, set_contact_frequency_unit] = useState('')
+    var [contact_linkedin, set_contact_linkedin] = useState('')
+    var [contact_number, set_contact_number] = useState('')
+    var [job_title, set_job_title] = useState('')
+    var [notes, set_notes] = useState('')
+    firebase.firestore().collection('contacts').onSnapshot(snapshot => {
+        snapshot.forEach(doc => {
+        set_f_name(doc.data().f_name)
+        set_l_name(doc.data().l_name)
+        set_company_name(doc.data().company_name)
+        set_contact_email(doc.data().contact_email)
+        set_contact_frequency_number(doc.data().contact_frequency_number)
+        set_contact_frequency_unit(doc.data().contact_frequency_unit)
+        set_contact_linkedin(doc.data().contact_linkedin)
+        set_contact_number(doc.data().contact_number)
+        set_job_title(doc.data().job_title)
+        set_notes(doc.data().notes)
+        });
+    });
     return (
-            <ul className="collapsible popout">
-                <Contact/>
-                <Contact/>
-                <Contact/>
-            </ul>
+        
+        <ul className="collapsible popout">
+            <Contact 
+                f_name={f_name} 
+                l_name={l_name} 
+                company_name={company_name} 
+                contact_email={contact_email} 
+                contact_frequency_number={contact_frequency_number} 
+                contact_frequency_unit={contact_frequency_unit} 
+                contact_linkedin={contact_linkedin} 
+                contact_number={contact_number} 
+                job_title={job_title} 
+                notes={notes} 
+            />
+        </ul>
     )
 
 }
