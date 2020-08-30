@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
+import './SignUp.css'
+
 
 export default class SignIn extends Component {
 
@@ -23,19 +25,25 @@ export default class SignIn extends Component {
     }
     render() {
         return (
-            <div className="container">
-                <h1>This is the sign In page</h1>
-                <form onSubmit={this.handleSubmit}>
-                  <div className="input-field col s12">
-                    <input type="email" id="email" className="validate" onChange={this.handleChange} />
-                    <label htmlFor="email" data-error="wrong" data-success="right">Email</label>
-                  </div>
-                  <div className="input-field col s12">
-                    <input type="password" id="password" className="validate" onChange={this.handleChange} />
-                    <label htmlFor="password" >Password</label>
-                  </div>
-                  <button type="submit" className="waves-effect waves-light btn">Submit</button>
-                  <Link to="/register" type="submit" className="waves-effect waves-light btn">Register</Link>
+            <div className="container white-text">
+                <h1 className="center">Login</h1>
+                <form className="container col s8" onSubmit={this.handleSubmit}>
+
+                <div className="row">
+                    <div className="input-field col s6">
+                        <input type="email" id="email" className="validate" onChange={this.handleChange} />
+                        <label htmlFor="email" data-error="wrong" data-success="right">Email</label>
+                    </div>
+                </div>
+                 
+                <div className="row">
+                    <div className="input-field col s6">
+                        <input type="password" id="password" className="validate" onChange={this.handleChange} />
+                        <label htmlFor="password" >Password</label>
+                    </div>
+                </div>
+                  
+                  <Link to="/register" type="submit" className="waves-effect waves-light btn"> Login </Link>
                 </form>
                 <h1>Or</h1>
                 <button onClick={this.loginWithGoogle}></button>

@@ -27,7 +27,7 @@ export default class SignIn extends Component {
                   </div>
 
                  
-                  <div className="input-field col s4">
+                  <div className="input-field col s8">
                     <input type="email" name="email" id="email" className="validate" onChange={this.handleChange} />
                     <label htmlFor="email" data-error="wrong" data-success="right">Email</label>
                   </div>
