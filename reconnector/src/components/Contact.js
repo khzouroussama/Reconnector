@@ -115,20 +115,20 @@ const ContactList = (props) => {
     var [contact_number, set_contact_number] = useState('')
     var [job_title, set_job_title] = useState('')
     var [notes, set_notes] = useState('')
-    firebase.firestore().collection('contacts').onSnapshot(snapshot => {
-        snapshot.forEach(doc => {
-        set_f_name(doc.data().f_name)
-        set_l_name(doc.data().l_name)
-        set_company_name(doc.data().company_name)
-        set_contact_email(doc.data().contact_email)
-        set_contact_frequency_number(doc.data().contact_frequency_number)
-        set_contact_frequency_unit(doc.data().contact_frequency_unit)
-        set_contact_linkedin(doc.data().contact_linkedin)
-        set_contact_number(doc.data().contact_number)
-        set_job_title(doc.data().job_title)
-        set_notes(doc.data().notes)
-        });
-    });
+    // firebase.firestore().collection('contacts').onSnapshot(snapshot => {
+    //     snapshot.forEach(doc => {
+    //     set_f_name(doc.data().f_name)
+    //     set_l_name(doc.data().l_name)
+    //     set_company_name(doc.data().company_name)
+    //     set_contact_email(doc.data().contact_email)
+    //     set_contact_frequency_number(doc.data().contact_frequency_number)
+    //     set_contact_frequency_unit(doc.data().contact_frequency_unit)
+    //     set_contact_linkedin(doc.data().contact_linkedin)
+    //     set_contact_number(doc.data().contact_number)
+    //     set_job_title(doc.data().job_title)
+    //     set_notes(doc.data().notes)
+    //     });
+    // });
     return (
         
         <ul className="collapsible popout">
@@ -143,6 +143,30 @@ const ContactList = (props) => {
                 contact_number={contact_number} 
                 job_title={job_title} 
                 notes={notes} 
+            />
+            <Contact
+                f_name = "John"
+                l_name ="Steven"
+                company_name="google"
+                contact_email="Steven@google.com"
+                contact_frequency_number="4"
+                contact_frequency_unit="w"
+                contact_linkedin="/in/Cruz"
+                contact_number=""
+                job_title="web developer"
+                notes = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper felis ut purus volutpat, a sodales mauris ullamcorper. Donec vulputate congue ante non ultricies."
+            />
+            <Contact
+                f_name = "Cruz"
+                l_name ="Steven"
+                company_name="google"
+                contact_email="Steven@google.com"
+                contact_frequency_number="4"
+                contact_frequency_unit="w"
+                contact_linkedin="/in/Cruz"
+                contact_number=""
+                job_title="web developer"
+                notes = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper felis ut purus volutpat, a sodales mauris ullamcorper. Donec vulputate congue ante non ultricies."
             />
         </ul>
     )
